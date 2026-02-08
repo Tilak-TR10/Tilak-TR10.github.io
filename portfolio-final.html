@@ -1,0 +1,1352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tilak Raval | AI & Robotics Engineer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+:root {
+    --bg: #ffffff;
+    --bg-secondary: #f8f9fa;
+    --text: #1a1a1a;
+    --text-secondary: #666666;
+    --text-muted: #999999;
+    --accent: #0066cc;
+    --accent-light: #3388dd;
+    --border: #e0e0e0;
+    --success: #28a745;
+    --font-sans: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-mono: 'IBM Plex Mono', monospace;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-sans);
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    font-size: 16px;
+}
+
+/* Navigation */
+nav {
+    position: sticky;
+    top: 0;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
+    z-index: 100;
+    padding: 0;
+}
+
+.nav-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo {
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: var(--text);
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-links a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--accent);
+}
+
+/* Container */
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+section {
+    padding: 4rem 0;
+}
+
+/* Hero */
+.hero {
+    padding: 5rem 0 4rem;
+}
+
+.hero-container {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 3rem;
+    align-items: start;
+}
+
+.hero-content {
+    max-width: 650px;
+}
+
+.hero-image {
+    position: relative;
+}
+
+.profile-photo {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--border);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.hero-title {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 0.5rem;
+}
+
+.hero-subtitle {
+    font-size: 1.3rem;
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+    font-weight: 400;
+}
+
+.hero-bio {
+    max-width: 750px;
+    color: var(--text-secondary);
+    font-size: 1.05rem;
+    line-height: 1.8;
+    margin-bottom: 2rem;
+}
+
+.hero-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
+
+.hero-meta-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.hero-links {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 0.7rem 1.5rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: all 0.3s;
+    display: inline-block;
+}
+
+.btn-primary {
+    background: var(--accent);
+    color: white;
+    border: 1px solid var(--accent);
+}
+
+.btn-primary:hover {
+    background: var(--accent-light);
+    border-color: var(--accent-light);
+}
+
+.btn-secondary {
+    background: white;
+    color: var(--accent);
+    border: 1px solid var(--accent);
+}
+
+.btn-secondary:hover {
+    background: var(--accent);
+    color: white;
+}
+
+/* Section Headers */
+.section-header {
+    margin-bottom: 2.5rem;
+}
+
+.section-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 0.5rem;
+}
+
+.section-subtitle {
+    color: var(--text-secondary);
+    font-size: 1.05rem;
+}
+
+/* Videos Section */
+#videos {
+    background: var(--bg-secondary);
+}
+
+.videos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.video-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+.video-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+}
+
+.video-thumbnail {
+    position: relative;
+    padding-top: 56.25%;
+    background: #f0f0f0;
+    overflow: hidden;
+}
+
+.video-thumbnail img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.video-play-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    background: rgba(0, 102, 204, 0.9);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+}
+
+.video-card:hover .video-play-btn {
+    background: var(--accent);
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
+.video-play-btn::after {
+    content: '';
+    width: 0;
+    height: 0;
+    border-left: 16px solid white;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    margin-left: 4px;
+}
+
+.video-info {
+    padding: 1.2rem;
+}
+
+.video-title {
+    font-weight: 500;
+    font-size: 1rem;
+    color: var(--text);
+    line-height: 1.5;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* Loading State */
+.loading {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 3rem;
+    color: var(--text-secondary);
+}
+
+.loading::after {
+    content: '...';
+    animation: dots 1.5s infinite;
+}
+
+@keyframes dots {
+    0%, 20% { content: '.'; }
+    40% { content: '..'; }
+    60%, 100% { content: '...'; }
+}
+
+/* Embedded Playlist Fallback */
+.playlist-embed {
+    grid-column: 1 / -1;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+}
+
+.playlist-embed iframe {
+    width: 100%;
+    height: 600px;
+    border: none;
+}
+
+.playlist-note {
+    text-align: center;
+    margin-top: 1.5rem;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+/* Projects */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.project-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.project-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transform: translateY(-4px);
+    border-color: var(--accent);
+}
+
+.project-icon {
+    width: 48px;
+    height: 48px;
+    background: var(--bg-secondary);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    margin-bottom: 1rem;
+}
+
+.project-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 0.5rem;
+    line-height: 1.4;
+}
+
+.project-type {
+    display: inline-block;
+    padding: 0.25rem 0.6rem;
+    background: rgba(0, 102, 204, 0.1);
+    color: var(--accent);
+    font-size: 0.75rem;
+    border-radius: 4px;
+    font-family: var(--font-mono);
+    margin-bottom: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.project-description {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    flex-grow: 1;
+}
+
+.project-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-bottom: 1rem;
+}
+
+.project-tech span {
+    padding: 0.25rem 0.6rem;
+    background: var(--bg-secondary);
+    color: var(--text-secondary);
+    font-size: 0.75rem;
+    border-radius: 4px;
+}
+
+.project-footer {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+}
+
+.project-link {
+    color: var(--accent);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.project-link:hover {
+    text-decoration: underline;
+}
+
+.project-award {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    color: #28a745;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+/* Experience */
+.experience-list {
+    display: grid;
+    gap: 2.5rem;
+}
+
+.experience-item {
+    border-left: 3px solid var(--border);
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.experience-item::before {
+    content: '';
+    position: absolute;
+    left: -7.5px;
+    top: 0;
+    width: 12px;
+    height: 12px;
+    background: var(--accent);
+    border-radius: 50%;
+}
+
+.experience-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    margin-bottom: 0.5rem;
+    gap: 1rem;
+}
+
+.experience-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--text);
+}
+
+.experience-date {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    white-space: nowrap;
+}
+
+.experience-company {
+    color: var(--text-secondary);
+    margin-bottom: 0.8rem;
+    font-weight: 500;
+}
+
+.experience-description {
+    color: var(--text-secondary);
+    line-height: 1.7;
+}
+
+.experience-description ul {
+    margin-left: 1.2rem;
+    margin-top: 0.5rem;
+}
+
+.experience-description li {
+    margin-bottom: 0.3rem;
+}
+
+/* Skills */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.skill-category h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 1rem;
+}
+
+.skill-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.skill-list li {
+    color: var(--text-secondary);
+    list-style: none;
+    padding-left: 1.2rem;
+    position: relative;
+}
+
+.skill-list li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-weight: bold;
+}
+
+/* Contact */
+.contact-methods {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background: var(--bg-secondary);
+    border-radius: 6px;
+    text-decoration: none;
+    color: var(--text);
+    transition: all 0.3s;
+}
+
+.contact-item:hover {
+    background: #e8eef5;
+}
+
+.contact-icon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    border-radius: 6px;
+    color: var(--accent);
+}
+
+.contact-info {
+    flex: 1;
+}
+
+.contact-label {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.2rem;
+}
+
+.contact-value {
+    font-weight: 500;
+    color: var(--text);
+}
+
+/* Footer */
+footer {
+    border-top: 1px solid var(--border);
+    padding: 2rem 0;
+    margin-top: 4rem;
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+/* Video Modal */
+.video-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.video-modal.active {
+    display: flex;
+}
+
+.modal-content {
+    width: 100%;
+    max-width: 1000px;
+    position: relative;
+}
+
+.close-modal {
+    position: absolute;
+    top: -50px;
+    right: 0;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 2.5rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    line-height: 1;
+    transition: opacity 0.3s;
+}
+
+.close-modal:hover {
+    opacity: 0.7;
+}
+
+.modal-player {
+    width: 100%;
+    aspect-ratio: 16/9;
+    border-radius: 8px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 1.5rem;
+    }
+    
+    .hero-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .hero-image {
+        order: -1;
+        text-align: center;
+    }
+    
+    .profile-photo {
+        width: 260px;
+        height: 260px;
+    }
+    
+    .hero-title {
+        font-size: 2.2rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .nav-links {
+        gap: 1rem;
+        font-size: 0.9rem;
+    }
+    
+    .section-title {
+        font-size: 1.6rem;
+    }
+    
+    .videos-grid,
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .experience-header {
+        flex-direction: column;
+        align-items: start;
+    }
+}
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="https://github.com/Tilak-TR10" class="nav-logo">Tilak Raval</a>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#videos">Videos</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section id="about" class="hero">
+        <div class="container">
+            <div class="hero-container">
+                <div class="hero-content">
+                    <h1 class="hero-title">Tilak Raval</h1>
+                    <p class="hero-subtitle">AI & Robotics Engineer</p>
+                    
+                    <div class="hero-meta">
+                        <span class="hero-meta-item">
+                            <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                                <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
+                            </svg>
+                            MEng @ University of Waterloo
+                        </span>
+                        <span class="hero-meta-item">
+                            <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                                <path d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A31.493 31.493 0 0 1 8 14.58a31.481 31.481 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94zM8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10z"/>
+                                <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+                            </svg>
+                            Kitchener, Ontario
+                        </span>
+                    </div>
+                    
+                    <p class="hero-bio">
+                        I'm a Master's student in Electrical and Computer Engineering at the University of Waterloo, 
+                        specializing in Artificial Intelligence and Robotics. My research focuses on developing intelligent 
+                        autonomous systems through computer vision, sensor fusion, and edge AI deployment. With hands-on 
+                        experience in building everything from smart farming robots to autonomous navigation systems, 
+                        I'm passionate about bridging the gap between theoretical innovation and real-world robotics applications.
+                    </p>
+                    
+                    <div class="hero-links">
+                        <a href="#videos" class="btn btn-primary">View My Work</a>
+                        <a href="#contact" class="btn btn-secondary">Get in Touch</a>
+                    </div>
+                </div>
+                
+                <div class="hero-image">
+                    <!-- Replace 'profile.jpg' with your actual photo file -->
+                    <img src="profile.jpg" alt="Tilak Raval" class="profile-photo">
+                </div>
+            </div>
+        </div>
+    </section>
+<!--
+    <section id="videos">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Project Demonstrations</h2>
+                <p class="section-subtitle">Video portfolio showcasing robotics projects and research work</p>
+            </div>
+            <div id="videos-container" class="videos-grid">
+                <div class="loading">Loading videos</div>
+            </div>
+        </div>
+    </section>
+-->
+    <section id="projects">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Projects</h2>
+                <p class="section-subtitle">Robotics, AI, and autonomous systems projects</p>
+            </div>
+            <div class="projects-grid">
+                <!-- Smart Farming Robot -->
+                <div class="project-card">
+                    <div class="project-icon">🌾</div>
+                    <h3 class="project-title">Smart Farming Robot</h3>
+                    <span class="project-type">Autonomous Systems</span>
+                    <p class="project-description">
+                        Autonomous smart farming robot with IoT-based farm monitoring. ESP32, soil sensors, and actuators for precision agriculture.
+                    </p>
+                    <div class="project-tech">
+                        <span>ESP32</span>
+                        <span>IoT</span>
+                        <span>Android</span>
+                        <span>Sensors</span>
+                    </div>
+                    <div class="project-footer">
+                        <a href="https://github.com/Tilak-TR10" target="_blank" class="project-link">View Code →</a>
+                    </div>
+                </div>
+
+                <!-- CV Autonomous Navigation -->
+                <div class="project-card">
+                    <div class="project-icon">👁️</div>
+                    <h3 class="project-title">CV Autonomous Navigation</h3>
+                    <span class="project-type">Computer Vision</span>
+                    <p class="project-description">
+                        Real-time computer vision algorithms for autonomous robot navigation. Camera + IMU fusion with AI perception models.
+                    </p>
+                    <div class="project-tech">
+                        <span>OpenCV</span>
+                        <span>Python</span>
+                        <span>ROS2</span>
+                        <span>Deep Learning</span>
+                    </div>
+                    <div class="project-footer">
+                        <a href="https://github.com/Tilak-TR10" target="_blank" class="project-link">View Code →</a>
+                    </div>
+                </div>
+
+                <!-- Self-Balancing Robot -->
+                <div class="project-card">
+                    <div class="project-icon">⚖️</div>
+                    <h3 class="project-title">Self-Balancing Robot</h3>
+                    <span class="project-type">Control Systems</span>
+                    <p class="project-description">
+                        Arduino-controlled self-balancing robot with PID control algorithm. Real-time feedback for optimal stability.
+                    </p>
+                    <div class="project-tech">
+                        <span>Arduino</span>
+                        <span>PID</span>
+                        <span>IMU</span>
+                        <span>C++</span>
+                    </div>
+                    <div class="project-footer">
+                        <a href="https://github.com/Tilak-TR10" target="_blank" class="project-link">View Code →</a>
+                    </div>
+                </div>
+
+                <!-- Hand Gesture Control -->
+                <div class="project-card">
+                    <div class="project-icon">👋</div>
+                    <h3 class="project-title">Hand Gesture Control Robot</h3>
+                    <span class="project-type">Machine Learning</span>
+                    <p class="project-description">
+                        OpenCV and ML-based hand gesture recognition for robot control. Real-time interpretation for intuitive interaction.
+                    </p>
+                    <div class="project-tech">
+                        <span>OpenCV</span>
+                        <span>ESP32</span>
+                        <span>ML</span>
+                        <span>Computer Vision</span>
+                    </div>
+                    <div class="project-footer">
+                        <a href="https://github.com/Tilak-TR10" target="_blank" class="project-link">View Code →</a>
+                    </div>
+                </div>
+
+                <!-- Surveillance Robot -->
+                <div class="project-card">
+                    <div class="project-icon">📹</div>
+                    <h3 class="project-title">Surveillance Robot</h3>
+                    <span class="project-type">Embedded Systems</span>
+                    <p class="project-description">
+                        Raspberry Pi surveillance robot for real-time monitoring. Remote control with TellyOps Twist Keyboard.
+                    </p>
+                    <div class="project-tech">
+                        <span>Raspberry Pi</span>
+                        <span>Python</span>
+                        <span>Streaming</span>
+                    </div>
+                    <div class="project-footer">
+                        <a href="https://github.com/Tilak-TR10" target="_blank" class="project-link">View Code →</a>
+                    </div>
+                </div>
+
+                <!-- Line Following Robot -->
+                <div class="project-card">
+                    <div class="project-icon">🛤️</div>
+                    <h3 class="project-title">Line Following Robot</h3>
+                    <span class="project-type">Computer Vision</span>
+                    <p class="project-description">
+                        Vision-based line following using OpenCV. Real-time image processing for precision navigation.
+                    </p>
+                    <div class="project-tech">
+                        <span>OpenCV</span>
+                        <span>Python</span>
+                        <span>Image Processing</span>
+                    </div>
+                    <div class="project-footer">
+                        <a href="https://github.com/Tilak-TR10" target="_blank" class="project-link">View Code →</a>
+                    </div>
+                </div>
+
+                <!-- VARNI Dancing Robot -->
+                <div class="project-card">
+                    <div class="project-icon">💃</div>
+                    <h3 class="project-title">VARNI Dancing Robot</h3>
+                    <span class="project-type">Cultural Project</span>
+                    <p class="project-description">
+                        Autonomous robot designed for Bal Mandal at Gandhinagar Akshardham. Performs synchronized dance movements.
+                    </p>
+                    <div class="project-tech">
+                        <span>Robotics</span>
+                        <span>Motion Control</span>
+                        <span>Automation</span>
+                    </div>
+                    <div class="project-footer">
+                        <a href="https://baps.org" target="_blank" class="project-link">Learn More →</a>
+                    </div>
+                </div>
+
+                <!-- Jal Jhilani Boat -->
+                <div class="project-card">
+                    <div class="project-icon">⛵</div>
+                    <h3 class="project-title">Jal Jhilani Ekadashi Boat</h3>
+                    <span class="project-type">Engineering Design</span>
+                    <p class="project-description">
+                        Boat designed for religious ceremonies at BAPS Gandhinagar Akshardham. Used during special occasions.
+                    </p>
+                    <div class="project-tech">
+                        <span>Mechanical Design</span>
+                        <span>Marine Engineering</span>
+                    </div>
+                    <div class="project-footer">
+                        <a href="https://github.com/Tilak-TR10" target="_blank" class="project-link">View Project →</a>
+                    </div>
+                </div>
+
+                <!-- Path Finder Robot -->
+                <div class="project-card">
+                    <div class="project-icon">🗺️</div>
+                    <h3 class="project-title">Path Finder Robot</h3>
+                    <span class="project-type">Navigation</span>
+                    <p class="project-description">
+                        University-level robotics competition robot. Advanced navigation algorithms and autonomous path finding.
+                    </p>
+                    <div class="project-tech">
+                        <span>Path Planning</span>
+                        <span>Sensors</span>
+                        <span>Autonomous</span>
+                    </div>
+                    <div class="project-footer">
+                        <a href="https://github.com/Tilak-TR10" target="_blank" class="project-link">View Code →</a>
+                        <span class="project-award">🏆 4th Place</span>
+                    </div>
+                </div>
+
+                <!-- Maze Solving Robot -->
+                <div class="project-card">
+                    <div class="project-icon">🧩</div>
+                    <h3 class="project-title">Maze Solving Robot</h3>
+                    <span class="project-type">Algorithms</span>
+                    <p class="project-description">
+                        Applied advanced algorithms (LSFB, RSLB, Flood-fill, A*) for autonomous maze navigation. Competition winner.
+                    </p>
+                    <div class="project-tech">
+                        <span>A* Algorithm</span>
+                        <span>Flood-fill</span>
+                        <span>Pathfinding</span>
+                    </div>
+                    <div class="project-footer">
+                        <a href="https://github.com/Tilak-TR10" target="_blank" class="project-link">View Code →</a>
+                        <span class="project-award">🥇 1st Place</span>
+                    </div>
+                </div>
+
+                <!-- Home Automation -->
+                <div class="project-card">
+                    <div class="project-icon">🏠</div>
+                    <h3 class="project-title">Home Automation with Google</h3>
+                    <span class="project-type">IoT</span>
+                    <p class="project-description">
+                        Smart home system with Google Assistant integration. Voice-activated control of home appliances using IoT.
+                    </p>
+                    <div class="project-tech">
+                        <span>Google Assistant</span>
+                        <span>IoT</span>
+                        <span>Voice Control</span>
+                    </div>
+                    <div class="project-footer">
+                        <a href="https://github.com/Tilak-TR10" target="_blank" class="project-link">View Code →</a>
+                    </div>
+                </div>
+
+                <!-- Smart Public Lighting -->
+                <div class="project-card">
+                    <div class="project-icon">💡</div>
+                    <h3 class="project-title">Smart Public Lighting</h3>
+                    <span class="project-type">IoT Systems</span>
+                    <p class="project-description">
+                        Smart India Hackathon project. Internet-controlled public lighting system using ESP32 and Arduino Cloud.
+                    </p>
+                    <div class="project-tech">
+                        <span>ESP32</span>
+                        <span>Arduino Cloud</span>
+                        <span>IoT</span>
+                    </div>
+                    <div class="project-footer">
+                        <a href="https://github.com/Tilak-TR10" target="_blank" class="project-link">View Code →</a>
+                    </div>
+                </div>
+
+                <!-- Maze Runner Competition -->
+                <div class="project-card">
+                    <div class="project-icon">🏃</div>
+                    <h3 class="project-title">Maze Runner Robot</h3>
+                    <span class="project-type">Competition</span>
+                    <p class="project-description">
+                        Precision robotics competition robot. Strategic problem-solving and efficient navigation at Lakshya Fest.
+                    </p>
+                    <div class="project-tech">
+                        <span>Precision Control</span>
+                        <span>Navigation</span>
+                        <span>Strategy</span>
+                    </div>
+                    <div class="project-footer">
+                        <a href="https://github.com/Tilak-TR10" target="_blank" class="project-link">View Project →</a>
+                        <span class="project-award">🥈 2nd Place</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Experience</h2>
+            </div>
+            <div class="experience-list">
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <h3 class="experience-title">Computer Vision Intern - Autonomous Robotics</h3>
+                        <span class="experience-date">Jan 2024 - Apr 2025</span>
+                    </div>
+                    <p class="experience-company">Tech Infinity, Gandhinagar, Gujarat, India</p>
+                    <div class="experience-description">
+                        <ul>
+                            <li>Developed and optimized real-time computer vision algorithms using OpenCV for autonomous robot navigation</li>
+                            <li>Integrated camera and IMU sensor data with AI-based perception models to improve robot decision-making</li>
+                            <li>Taught junior students core concepts of IoT, automation, robotics, and microcontrollers through hands-on projects</li>
+                            <li>Mentored students in building autonomous IoT systems, soldering, and hardware integration</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <h3 class="experience-title">Part-Time Associate</h3>
+                        <span class="experience-date">Current</span>
+                    </div>
+                    <p class="experience-company">Circle K, Kitchener, Ontario</p>
+                    <div class="experience-description">
+                        <ul>
+                            <li>Customer service and operations management</li>
+                            <li>Developed strong communication and time management skills</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Technical Skills</h2>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Programming Languages</h3>
+                    <ul class="skill-list">
+                        <li>Python</li>
+                        <li>C++</li>
+                        <li>C#</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Robotics & Frameworks</h3>
+                    <ul class="skill-list">
+                        <li>ROS2</li>
+                        <li>Docker & Portainer</li>
+                        <li>Webots & Gazebo</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Machine Learning & AI</h3>
+                    <ul class="skill-list">
+                        <li>TensorFlow & PyTorch</li>
+                        <li>OpenCV</li>
+                        <li>RTOS</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Embedded Systems</h3>
+                    <ul class="skill-list">
+                        <li>Arduino & Raspberry Pi</li>
+                        <li>ESP32 & STM32</li>
+                        <li>IoT Development</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Tools & Platforms</h3>
+                    <ul class="skill-list">
+                        <li>Fusion360 & KiCad</li>
+                        <li>Git & GitHub</li>
+                        <li>Arduino IDE</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Contact</h2>
+                <p class="section-subtitle">Let's connect and discuss robotics, research, or collaboration opportunities</p>
+            </div>
+            <div class="contact-methods">
+                <a href="t2raval@uwaterloo.ca" class="contact-item">
+                    <div class="contact-icon">
+                        <svg width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                            <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z"/>
+                        </svg>
+                    </div>
+                    <div class="contact-info">
+                        <div class="contact-label">Email</div>
+                        <div class="contact-value"><span class="__cf_email__" data-cfemail="47332e2b262c69352631262b07223f262a372b226924282a">t2raval@uwaterloo.ca</span></div>
+                    </div>
+                </a>
+
+                <a href="https://github.com/Tilak-TR10" target="_blank" class="contact-item">
+                    <div class="contact-icon">
+                        <svg width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                            <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+                        </svg>
+                    </div>
+                    <div class="contact-info">
+                        <div class="contact-label">GitHub</div>
+                        <div class="contact-value">Tilak-TR10</div>
+                    </div>
+                </a>
+
+                <a href="https://linkedin.com/in/tilak-tr10" target="_blank" class="contact-item">
+                    <div class="contact-icon">
+                        <svg width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                            <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/>
+                        </svg>
+                    </div>
+                    <div class="contact-info">
+                        <div class="contact-label">LinkedIn</div>
+                        <div class="contact-value">tilak-tr10</div>
+                    </div>
+                </a>
+
+<!--                <div class="contact-item">
+                    <div class="contact-icon">
+                        <svg width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                            <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
+                        </svg>
+                    </div>
+                    <div class="contact-info">
+                        <div class="contact-label">Location</div>
+                        <div class="contact-value">Kitchener, ON</div>
+                    </div>
+                </div> 
+-->
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Tilak Raval • Building the future, one robot at a time</p>
+        </div>
+    </footer>
+
+    <!-- Video Modal -->
+    <div id="videoModal" class="video-modal">
+        <div class="modal-content">
+            <button class="close-modal" onclick="closeVideoModal()">&times;</button>
+            <iframe id="modalPlayer" class="modal-player" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+        // ========================================
+        // YOUTUBE PLAYLIST AUTO-UPDATE
+        // ========================================
+        // Paste your YouTube playlist URL here:
+        const PLAYLIST_URL = 'https://youtube.com/playlist?list=PLPmpCgllhAeSFFxUBSVo4pe3xrbj4LG-h&si=tac7pzk5Vlhcy19D';
+        
+        // Optional: Get FREE YouTube API key from https://console.cloud.google.com/
+        // Leave as 'YOUR_API_KEY_HERE' to use embedded playlist (works immediately)
+        const YOUTUBE_API_KEY = 'YOUR_API_KEY_HERE';
+        
+        // ========================================
+        // AUTO-FETCH & DISPLAY
+        // ========================================
+        
+        function extractPlaylistId(url) {
+            const match = url.match(/[?&]list=([^&]+)/);
+            return match ? match[1] : null;
+        }
+
+        async function fetchPlaylistVideos() {
+            const playlistId = extractPlaylistId(PLAYLIST_URL);
+            
+            if (!playlistId) {
+                showError('Invalid playlist URL');
+                return;
+            }
+
+            // If no API key, show embedded playlist
+            if (YOUTUBE_API_KEY === 'YOUR_API_KEY_HERE') {
+                showEmbeddedPlaylist(playlistId);
+                return;
+            }
+
+            try {
+                const response = await fetch(
+                    `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=50&playlistId=${playlistId}&key=${YOUTUBE_API_KEY}`
+                );
+                
+                if (!response.ok) {
+                    throw new Error('API request failed');
+                }
+                
+                const data = await response.json();
+                displayVideoGrid(data.items);
+            } catch (error) {
+                console.error('Error fetching videos:', error);
+                showEmbeddedPlaylist(playlistId);
+            }
+        }
+
+        function displayVideoGrid(videos) {
+            const container = document.getElementById('videos-container');
+            
+            if (!videos || videos.length === 0) {
+                container.innerHTML = '<p class="loading">No videos found in playlist</p>';
+                return;
+            }
+
+            container.innerHTML = videos.map(video => {
+                const { title, thumbnails, resourceId } = video.snippet;
+                const videoId = resourceId.videoId;
+                const thumbnail = thumbnails.medium?.url || thumbnails.default.url;
+
+                return `
+                    <div class="video-card" onclick="openVideo('${videoId}')">
+                        <div class="video-thumbnail">
+                            <img src="${thumbnail}" alt="${escapeHtml(title)}" loading="lazy">
+                            <div class="video-play-btn"></div>
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">${escapeHtml(title)}</h3>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        function showEmbeddedPlaylist(playlistId) {
+            const container = document.getElementById('videos-container');
+            container.innerHTML = `
+                <div class="playlist-embed">
+                    <iframe 
+                        src="https://www.youtube.com/embed/videoseries?list=${playlistId}" 
+                        allowfullscreen
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    ></iframe>
+                </div>
+                <p class="playlist-note">
+                    💡 <a href="YOUTUBE-SETUP-GUIDE.md" style="color: var(--accent);">Add a YouTube API key</a> 
+                    to display individual video cards
+                </p>
+            `;
+        }
+
+        function showError(message) {
+            const container = document.getElementById('videos-container');
+            container.innerHTML = `<p class="loading" style="color: #dc3545;">${message}</p>`;
+        }
+
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+        function openVideo(videoId) {
+            const modal = document.getElementById('videoModal');
+            const player = document.getElementById('modalPlayer');
+            player.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeVideoModal() {
+            const modal = document.getElementById('videoModal');
+            const player = document.getElementById('modalPlayer');
+            modal.classList.remove('active');
+            player.src = '';
+            document.body.style.overflow = '';
+        }
+
+        // Close on background click
+        document.getElementById('videoModal').addEventListener('click', (e) => {
+            if (e.target.id === 'videoModal') {
+                closeVideoModal();
+            }
+        });
+
+        // Close on Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeVideoModal();
+            }
+        });
+
+        // Active nav link on scroll
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.nav-links a');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#$
